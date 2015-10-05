@@ -21,6 +21,7 @@ http-server -p 9000
 
 XAMPP - http://www.adminweb.jp/xampp/
 
+nodebrew - https://github.com/hokaccha/nodebrew
 
 #### NodeJSが動かく環境を準備する
 
