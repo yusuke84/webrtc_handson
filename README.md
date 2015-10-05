@@ -26,6 +26,7 @@ XAMPP - http://www.adminweb.jp/xampp/
 
 - MacとWindows共に `node` コマンド、 `npm` コマンドが使えるようにして下さい。
 
+nodebrew - https://github.com/hokaccha/nodebrew
 
 ## STEP1
 
