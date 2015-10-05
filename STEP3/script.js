@@ -11,38 +11,30 @@ var existingCall;
 navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
 
 // PeerJSオブジェクトを生成
-var peer = new Peer({ key: APIKEY, debug: 3});
+// ハンズオン
 
 // PeerIDを生成
-peer.on('open', function(){
-    $('#my-id').text(peer.id);
-});
+// ハンズオン
 
 // 相手からのコールを受信したら自身のメディアストリームをセットして返答
-peer.on('call', function(call){
-    call.answer(window.localStream);
-    step3(call);
-});
+// ハンズオン
 
 // エラーハンドラー
-peer.on('error', function(err){
-    alert(err.message);
-    step2();
-});
+// ハンズオン
 
 // イベントハンドラー
 $(function(){
 
     // 相手に接続
     $('#make-call').click(function(){
-        var call = peer.call($('#contactlist').val(), window.localStream);
+        // ハンズオン
         step3(call);
 
     });
 
     // 切断
     $('#end-call').click(function(){
-        existingCall.close();
+        // ハンズオン
         step2();
     });
 
@@ -62,11 +54,7 @@ $(function(){
 
 function step1 () {
     // メディアストリームを取得する
-    navigator.getUserMedia({audio: true, video: true}, function(stream){
-        $('#my-video').prop('src', URL.createObjectURL(stream));
-        window.localStream = stream;
-        step2();
-    }, function(){ $('#step1-error').show(); });
+    // ハンズオン
 }
 
 function step2 () {
@@ -78,16 +66,14 @@ function step2 () {
 function step3 (call) {
     // すでに接続中の場合はクローズする
     if (existingCall) {
-        existingCall.close();
+        // ハンズオン
     }
 
     // 相手からのメディアストリームを待ち受ける
-    call.on('stream', function(stream){
-        $('#their-video').prop('src', URL.createObjectURL(stream));
-    });
+    // ハンズオン
 
     // 相手がクローズした場合
-    call.on('close', step2);
+    // ハンズオン
 
     // Callオブジェクトを保存
     existingCall = call;
@@ -101,12 +87,5 @@ function step3 (call) {
 
 function getUserList () {
     //ユーザリストを取得
-    peer.listAllPeers(function(list){
-        for(var cnt = 0;cnt < list.length;cnt++){
-            if($.inArray(list[cnt],userList)<0 && list[cnt] != peer.id) {
-                userList.push(list[cnt]);
-                $('#contactlist').append($('<option>', {"value": list[cnt], "text": list[cnt]}));
-            }
-        }
-    });
+    // ハンズオン
 }
