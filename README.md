@@ -13,6 +13,8 @@ http://www.slideshare.net/yusukenaka52/webrtc-53536521
 ```
 python -m SimpleHTTPServer 8000
 php -S localhost:8000
+ruby -run -e httpd . -p 8000
+http-server -p 9000
 ```
 
 - Windowsの場合
