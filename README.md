@@ -2,6 +2,26 @@
 
 このリポジトリはWebRTCのハンズオンを開催する為に必要なコードを管理するリポジトリです。
 
+## 事前準備
+
+#### ローカルサーバを立てられるように準備する
+
+- Macの場合
+```
+python -m SimpleHTTPServer 8000
+php -S localhost:8000
+```
+
+- Windowsの場合
+
+XAMPP - http://www.adminweb.jp/xampp/
+
+
+#### NodeJSが動かく環境を準備する
+
+- MacとWindows共に `node` コマンド、 `npm` コマンドが使えるようにして下さい。
+
+
 ## STEP1
 
    - がねこさんの手動シグナリングを体感する
