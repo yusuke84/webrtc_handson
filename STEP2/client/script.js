@@ -77,8 +77,6 @@ function createPeerConnection(){
     window.peerConnection.onicecandidate = window.onIceCandidate;
     console.log("Create PeerConnetion");
 
-    return peerConnection;
-
 }
 
 // ICE Candidateをブラウザから取得した際に発火
